@@ -1,0 +1,106 @@
+id: typescript_reflection_question
+learningObjectives:
+  - Reflect on how TypeScript can be used in personal projects.
+hints:
+  - Consider think how TypeScript increases both safeties and collaboration
+    possible with type definitions.
+  - Good applications often come with clear benefits - think ease of meshing
+    code with team members.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: How do you think TypeScript could improve your current or a future
+              project? Why would you choose to use TypeScript instead of plain
+              JavaScript?
+trigger:
+  type: user_message
+  params:
+    person: lucca
+  flowNode:
+    do:
+      - actionId: parse_user_response
+        name: user_answer
+        params:
+          prompt: "
+
+            \    Please evaluate the user's answer in relation to
+            the expected answer: The ideal answer should include specific ways
+            TypeScript improves project such as better type safety and improved
+            tooling experience when compared to JavaScript..
+
+            \    # Assessment Criteria
+
+            \    - Determine if the user's response demonstrates a
+            clear understanding of the key concepts and ideas presented in the
+            expected answer.
+
+            \    - Consider synonyms, paraphrasing, and different
+            phrasing that convey the same meaning.
+
+            \    - Be flexible and focus on the essence of the
+            answer rather than exact wording.
+
+            \ \ 
+
+            \    # Response Guidelines:
+
+            \    - If the user's answer is correct or shows
+            sufficient understanding, return 'correct: true'.
+
+            \      - Provide a positive and affirming message,
+            congratulating them and reinforcing their understanding.
+
+            \    - If the user's answer is incorrect or incomplete,
+            return 'correct: false'.
+
+            \      - Gently explain why the answer is not fully
+            correct or what may be missing.
+
+            \      - Encourage them to try again, being empathetic
+            and supportive.
+
+            \ \ 
+
+            \    # Tone and Style:
+
+            \    - Use friendly and encouraging language.
+
+            \    - Be empathetic to the user's learning process.
+
+            \    - Focus on helping the user learn and understand
+            the material.
+
+            \  "
+          schema:
+            correct: boolean
+            reply: string
+    if:
+      conditions:
+        - conditionId: is_truthy
+          params:
+            value: ${outputs.user_answer.value.correct}
+      then:
+        do:
+          - actionId: bot_message
+            params:
+              person: lucca
+              messages:
+                - text: ${outputs.user_answer.value.reply}
+          - actionId: bot_message
+            params:
+              person: lucca
+              messages:
+                - text: That's all for our journey into TypeScript 101! I'm proud of what you've
+                    achieved. Have fun experimenting with TypeScript and
+                    remember, I'm here whenever you need more learning quests!
+          - actionId: finish_step
+      else:
+        do:
+          - actionId: bot_message
+            params:
+              person: lucca
+              messages:
+                - text: ${outputs.user_answer.value.reply}
