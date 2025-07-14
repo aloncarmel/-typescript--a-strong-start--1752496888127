@@ -1,0 +1,32 @@
+id: declaring_types
+learningObjectives:
+  - Learn how to declare types in TypeScript.
+hints:
+  - Type declarations explain what kind of data your variables can hold.
+  - Explore [TypeScript Basic
+    Types](https://www.typescriptlang.org/docs/handbook/basic-types.html).
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: TypeScript's magic starts with declaring types.
+          - text: You can explicitly inform the compiler about the type of variables and
+              function outputs.
+          - text: "For example: `let userName: string = 'Lucca';` tells TypeScript that
+              `userName` must always be a string."
+          - text: Declaring types helps in preventing type mismatches and is a foundation
+              for safe code.
+          - text: For a deeper dive into type declarations, visit [Type
+              Annotations](https://www.typescriptlang.org/docs/handbook/basic-types.html).
+          - text: Take a deep breath and let's move on to interfaces and their role in
+              TypeScript!
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
