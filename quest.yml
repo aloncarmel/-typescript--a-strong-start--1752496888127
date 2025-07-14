@@ -1,0 +1,29 @@
+id: typescript_fundamentals-v5yzq
+title: "TypeScript: A Strong Start"
+subtitle: Learn TypeScript fundamentals for safer coding
+description: >-
+  Welcome to the TypeScript adventure, where we unravel the secrets of making
+  JavaScript more robust and predictable! In this quest, we'll conquer the
+  fundamentals of TypeScript, a powerful language that adds type safety to
+  JavaScript.
+
+  TypeScript can save you from many headaches by catching errors at compile time. You'll learn how to declare types, use interfaces, and embrace TypeScript's type inference to create safer and more reliable code.
+
+  Through this journey, you'll discover the practical applications of TypeScript that elevate both individual projects and teamwork, making you a stronger coder overall. Ready to embark on a safer coding journey? Let's start this exciting quest and fortify our coding skills with TypeScript!
+level: beginner
+duration: 0.75
+skills:
+  - typescript
+  - javascript
+  - strongly typed programming
+  - software development
+steps:
+  - intro_to_typescript
+  - declaring_types
+  - interfaces
+  - type_inference
+  - typesafety_benefits_quiz
+  - typeinference_open
+  - typescript_reflection_question
+type: MODULE
+repository: null
