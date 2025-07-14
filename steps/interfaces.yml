@@ -1,0 +1,32 @@
+id: interfaces
+learningObjectives:
+  - Understand the role of interfaces in TypeScript.
+hints:
+  - Interfaces enforce expected structures on objects.
+  - See more on [TypeScript
+    Interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html).
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Interfaces in TypeScript define the structure that objects should conform
+              to.
+          - text: They enable easier collaboration by defining clear contracts in code.
+          - text: Consider using an interface when you want a class to promise a specific
+              structure, much like securing a pact!
+          - text: "For instance, `interface ICar { color: string; }` requires any car object
+              to have a color property of type string."
+          - text: View more on interfaces on [TypeScript
+              Interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html).
+          - text: All set? We'll now glance at type inference - an intriguing feature of
+              TypeScript next!
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
