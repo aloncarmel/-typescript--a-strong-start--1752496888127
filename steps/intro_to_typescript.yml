@@ -1,0 +1,32 @@
+id: intro_to_typescript
+learningObjectives:
+  - Introduce TypeScript and its benefits over JavaScript.
+hints:
+  - Types can save you from unexpected behavior.
+  - Refer to the official [TypeScript
+    documentation](https://www.typescriptlang.org/docs/).
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Let's kick off our TypeScript journey! TypeScript is a superset of
+              JavaScript, meaning it builds on top of JavaScript by adding
+              types.
+          - text: This helps catch errors during development, making your code safer and
+              easier to understand.
+          - text: One major benefit is that TypeScript can prevent many runtime errors by
+              catching issues during development.
+          - text: For more on what makes TypeScript fantastic, check out [this
+              guide](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html).
+          - text: Once you're ready and excited about TypeScript, let's move on to the next
+              step!
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
