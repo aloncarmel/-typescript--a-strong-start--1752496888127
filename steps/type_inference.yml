@@ -1,0 +1,30 @@
+id: type_inference
+learningObjectives:
+  - Discover TypeScript's type inference capabilities.
+hints:
+  - Type inference requires less effort to declare types explicitly.
+  - Explore [TypeScript Type
+    Inference](https://www.typescriptlang.org/docs/handbook/type-inference.html).
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: TypeScript offers powerful type inference, which means it can often guess
+              the type of a variable.
+          - text: This can boost productivity as TypeScript automatically deduces the type
+              for you.
+          - text: For example, `let initializedString = 'Lucca';` TypeScript infers that
+              initializedString is of type string without explicit declaration.
+          - text: Learn more about type inference in the [TypeScript
+              Handbook](https://www.typescriptlang.org/docs/handbook/type-inference.html).
+          - text: Once you see the beauty of type inference, join me in a quiz next!
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
