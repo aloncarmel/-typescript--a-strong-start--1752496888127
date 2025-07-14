@@ -1,0 +1,59 @@
+id: typesafety_benefits_quiz
+learningObjectives:
+  - Assess understanding of the advantages of using TypeScript.
+hints:
+  - TypeScript provides tooling and early bug detection benefits.
+  - It helps in maintaining large codebases by adding predictability.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Why is TypeScript often preferred for large JavaScript projects?
+    - actionId: quiz_message
+      name: quiz
+      params:
+        person: lucca
+        options:
+          - It adds static typing for early error detection.
+          - It has better performance than JavaScript.
+          - It completely alters how JavaScript is rendered in browsers.
+trigger:
+  type: chat_form_submitted
+  flowNode:
+    switch:
+      key: ${formSubmission}
+      cases:
+        A:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Correct! TypeScript makes code more maintainable by catching errors early
+                      on.
+            - actionId: finish_step
+        B:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Not quite. While TypeScript aids in development, runtime performance
+                      remains comparable to JavaScript since compiled code runs
+                      JavaScript.
+            - actionId: replay_action
+              params:
+                actionName: quiz
+        C:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: A noble try! TypeScript compiles back to JavaScript for browser
+                      compatibility, so runtime behavior isn't altered.
+            - actionId: replay_action
+              params:
+                actionName: quiz
